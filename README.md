@@ -66,7 +66,6 @@ seaborn: A data visualization library built on top of matplotlib, providing addi
 To install the required libraries, you can use the following command:
 
 ```
-Copy code
 pip install pandas scikit-learn geopy folium matplotlib seaborn
 ```
 
