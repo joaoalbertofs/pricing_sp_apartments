@@ -70,7 +70,7 @@ pip install pandas scikit-learn geopy folium matplotlib seaborn
 ```
 
 ### File Description:
-Analysis.ipynb: Jupyter Notebook containing the code and analysis for the project.
+Analysis.ipynb: Jupyter Notebook containing the code and analysis for the project.<br>
 dados_wgs.xlsx: Excel spreadsheet containing raw data for apartment listings in São Paulo.
 
 
