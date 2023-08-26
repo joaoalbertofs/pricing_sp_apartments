@@ -1,54 +1,84 @@
-# sao_paulo_apartments
+# São Paulo Apartment Pricing
 
-# Pricing Factors in Neighborhoods of Different Social Classes
+## Predicting Apartment Prices in São Paulo
 
-## Project Motivation:
+### Project Motivation:
+This project is aimed at creating a predictive model for apartment prices in São Paulo. We seek to understand the key factors that influence apartment prices in different neighborhoods across the city. Our goal is to provide valuable insights for individuals, real estate professionals, and investors looking to buy or sell apartments in São Paulo.
 
-This project aims to address several key questions regarding the factors that influence apartment prices in different regions. Firstly, we will explore the role that location plays in determining apartment prices. By analyzing apartments in peripheral areas and central regions of São Paulo, we will gain insights into how location impacts pricing decisions.
+### Data Description:
+The dataset used for this project contains information about apartments in São Paulo. Here are the main columns in the dataset:
 
-Additionally, we will investigate the variables associated with apartments in different areas. We will examine variables such as unit price, usable area, number of bedrooms, and number of suites to understand the characteristics of apartments in the outskirts and central parts of the city. By comparing these variables, we can identify any notable differences between the two regions.
+id: Unique identifier for each apartment. <br>
+valor_total: Total price of the apartment.<br>
+unit: Price per unit area.<br>
+area_util: Usable area of the apartment.<br>
+quartos: Number of bedrooms.<br>
+vagas: Number of parking spaces.<br>
+condominio: Condominium fee.<br>
+suites: Number of suites.<br>
+banheiros: Number of bathrooms.<br>
+piscina: Indicates whether the apartment has a pool (1 for yes, 0 for no).<br>
+academia: Indicates whether the apartment has a gym (1 for yes, 0 for no).<br>
+quadra: Indicates whether the apartment has a sports court (1 for yes, 0 for no).<br>
+endereco: Address of the apartment.<br>
+link: Link to the apartment listing.<br>
+bairro: Neighborhood of the apartment.<br>
+media_bairro: Average apartment price in the neighborhood.<br>
+qtd_dados_bairro: Number of data points in the neighborhood.<br>
+media_idh: Average Human Development Index (IDH) in the neighborhood.<br>
+media_gini: Average Gini Index in the neighborhood.<br>
+expectativa_vida: Life expectancy in the neighborhood.<br>
+renda_percapita: Per capita income in the neighborhood.<br>
+estacao_prox: Nearest subway station.<br>
+linha_prox: Subway line of the nearest station.<br>
+dist: Distance to the nearest subway station (in meters).<br>
+lat: Latitude of the apartment.<br>
+lon: Longitude of the apartment.<br>
 
-Moreover, we will analyze the factors that have a greater influence on pricing apartments in central regions. By examining variables such as unit price, usable area, number of bedrooms, and number of suites, we can determine which factors carry more weight in determining the prices of apartments in desirable locations.
 
-By addressing these questions, this project aims to provide valuable insights into the dynamics of apartment pricing in different regions and shed light on the factors that significantly impact the real estate market.
+### Analysis / Modeling:
 
-## Findings
-Cluster 1: Apartments in peripheral areas, further away from the city center, showed that the number of bathrooms emerged as the predominant factor in determining apartment prices. Buyers or tenants in these areas value apartments with a greater number of bathrooms, indicating a preference for larger, more functional living spaces.
+For modeling, we will use a Random Forest regression model. This choice is based on its ability to handle complex relationships between features and target variables, making it well-suited for predicting apartment prices in São Paulo using latitude and longitude coordinates, as well as other relevant features.
 
-Cluster 0: Apartments in central regions, closer to the city center, revealed that the number of bathrooms is not as influential. Instead, the unit price and usable area play a more significant role in pricing. Higher unit prices and larger usable areas are associated with apartments in desirable locations, showcasing luxurious features and reflecting their premium value.
+### Implementation:
+To use the predictive model, input the following apartment details:
+<br>
+area: Usable area of the apartment (integer value).<br>
+bedrooms: Number of bedrooms (integer value).<br>
+parking_spaces: Number of parking spaces (integer value).<br>
+condominium: Condominium fee (floating-point number).<br>
+suites: Number of suites (integer value).<br>
+bathrooms: Number of bathrooms (integer value).<br>
+pool: Does it have a pool? (1 for yes, 0 for no, integer value).<br>
+gym: Does it have a gym? (1 for yes, 0 for no, integer value).<br>
+sports_court: Does it have a sports court? (1 for yes, 0 for no, integer value).<br>
+cep: Enter the CEP (use separator, string value).<br>
+The model will then predict the total value of the apartment based on these inputs.<br>
 
-## Insights
-Location Matters: The location of an apartment significantly impacts its pricing. Peripheral areas prioritize practicality and space (reflected by the number of bathrooms), while central areas focus on location, quality, and overall desirability (reflected by unit price and usable area).
-
-Tailoring Strategies: Stakeholders in the real estate market can benefit from understanding these differences to tailor their strategies based on the specific clusters. This enables them to cater to the preferences and needs of potential buyers or tenants in different social classes.
-
-## Usage
-To replicate this analysis or delve deeper into the findings, please refer to the code and dataset available in this repository. The code provides a comprehensive understanding of the clustering process and the importance of different factors in determining apartment prices.
-
-Feel free to explore the code and dataset, and don't hesitate to reach out if you have any questions or need further assistance.
-
-
-## Libraries Used
-
-The following libraries were used in this project:
-
-- pandas: A powerful data manipulation library for data analysis.
-- matplotlib.pyplot: A plotting library for creating visualizations in Python.
-- sklearn.cluster.KMeans: A library for performing K-means clustering, a popular unsupervised learning algorithm.
-- sklearn.metrics.silhouette_score: A metric to evaluate the quality of clustering based on the silhouette coefficient.
-- seaborn: A data visualization library built on top of matplotlib, providing additional aesthetic and statistical features.
-- warnings: A library for handling warning messages in Python.
-
+### Libraries Used:
+pandas: A powerful data manipulation library for data analysis.
+scikit-learn: A machine learning library for modeling and prediction.
+geopy: A library for geocoding and working with location data.
+folium: A library for creating interactive maps.
+matplotlib: A plotting library for creating visualizations in Python.
+seaborn: A data visualization library built on top of matplotlib, providing additional aesthetic and statistical features.
+<br>
 To install the required libraries, you can use the following command:
 
-```shell
-pip install pandas matplotlib scikit-learn seaborn
+```
+Copy code
+pip install pandas scikit-learn geopy folium matplotlib seaborn
 ```
 
-## File desciption
-
-Analysis.ipynb: Jupyter Notebook with code and analysis for the project.
+### File Description:
+Analysis.ipynb: Jupyter Notebook containing the code and analysis for the project.
 dados_wgs.xlsx: Excel spreadsheet containing raw data for apartment listings in São Paulo.
+
+
+### Usage:
+To replicate this analysis or make predictions using the provided model, please refer to the code and dataset available in this repository. The code provides a comprehensive understanding of the analysis process and how to use the model for predicting apartment prices.
+
+Feel free to explore the code and dataset, and don't hesitate to reach out if you have any questions or need further assistance.
 
 ## Resolution
 
