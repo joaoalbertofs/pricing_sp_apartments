@@ -81,6 +81,6 @@ Feel free to explore the code and dataset, and don't hesitate to reach out if yo
 
 ## Resolution
 
-You can fin the study in this link: https://medium.com/@joaoalberto.sequeira/what-influences-pricing-in-neighborhoods-of-different-social-classes-d9e29a703542
+You can fin the study in this link: https://medium.com/@joaoalberto.sequeira/predicting-apartment-prices-in-s%C3%A3o-paulo-ac28aee14daf
 
 Data source: https://www.kaggle.com/datasets/jlgrego/apartamentos-venda-na-cidade-de-sao-paulo-sp
